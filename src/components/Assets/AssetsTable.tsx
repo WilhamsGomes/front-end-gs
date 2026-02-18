@@ -24,7 +24,7 @@ type AssetsTableProps = {
 };
 
 export function AssetsTable({ rows, onEdit, onDelete }: AssetsTableProps) {
-  return (
+  return ( 
     <TableScrollArea borderRadius="12px">
       <Table.Root variant="line" size="md">
         <Table.Header > 
