@@ -1,11 +1,11 @@
 import { AssetsTableCard } from "@/components/AssetsTableCard";
 import CardDash from "@/components/Card";
-import { HStack, SimpleGrid } from "@chakra-ui/react";
+import { Box, SimpleGrid } from "@chakra-ui/react";
 import { FaBan, FaBox, FaCheckCircle, FaTools } from "react-icons/fa";
 
 export default function Dashboard() {
   return (
-    <>
+    <Box gap={4} display={"flex"} flexDirection={"column"}>
       <SimpleGrid columns={{ base: 1, sm: 2, lg: 4 }} gap="10px">
         <CardDash
           label="Total de ativos"
@@ -28,6 +28,6 @@ export default function Dashboard() {
         <CardDash label="Inativos" value={1} icon={FaBan} iconColor="red.600" />
       </SimpleGrid>
       <AssetsTableCard />
-    </>
+    </Box>
   );
 }

@@ -113,7 +113,7 @@ export function AssetsTableCard() {
           onEdit={(id) => console.log("edit", id)}
           onDelete={(id) => console.log("delete", id)}
         />
-      </Card.Body>
+      </Card.Body> 
     </Card.Root>
   );
 }

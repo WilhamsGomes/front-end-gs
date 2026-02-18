@@ -24,12 +24,11 @@ type AssetsTableProps = {
 };
 
 export function AssetsTable({ rows, onEdit, onDelete }: AssetsTableProps) {
-
   return (
     <TableScrollArea borderRadius="12px">
       <Table.Root variant="line" size="md">
-        <Table.Header>
-          <Table.Row bg="blackAlpha.100">
+        <Table.Header > 
+          <Table.Row bg="white">
             <Table.ColumnHeader color="blackAlpha.600">Nome</Table.ColumnHeader>
             <Table.ColumnHeader color="blackAlpha.600">
               Categoria
@@ -53,7 +52,7 @@ export function AssetsTable({ rows, onEdit, onDelete }: AssetsTableProps) {
           {rows.map((a) => {
             const ui = getStatusUI(a.status);
             return (
-              <Table.Row key={a.id} bg="blackAlpha.100">
+              <Table.Row key={a.id} bg="white">
                 <Table.Cell fontWeight="600" color="blackAlpha.900">
                   {a.name}
                 </Table.Cell>
@@ -62,7 +61,9 @@ export function AssetsTable({ rows, onEdit, onDelete }: AssetsTableProps) {
 
                 <Table.Cell color="blackAlpha.700">{a.serialNumber}</Table.Cell>
 
-                <Table.Cell color="blackAlpha.900">{a.acquisitionDate}</Table.Cell>
+                <Table.Cell color="blackAlpha.900">
+                  {a.acquisitionDate}
+                </Table.Cell>
 
                 <Table.Cell>
                   <Badge
