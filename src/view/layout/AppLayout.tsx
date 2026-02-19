@@ -2,7 +2,7 @@ import { Box, Flex } from "@chakra-ui/react";
 import { Outlet, useLocation } from "react-router-dom";
 import Sidebar from "./Sidebar";
 import Topbar from "./Topbar";
-import { usePageMeta } from "@/hooks/usePageMeta";
+import { usePageMeta } from "@/app/hooks/usePageMeta";
 
 export function AppLayout() {
   const { pathname } = useLocation();

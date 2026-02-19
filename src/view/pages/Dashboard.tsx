@@ -1,5 +1,5 @@
-import { AssetsTableCard } from "@/components/Assets/AssetsTableCard";
-import CardDash from "@/components/Card";
+import { AssetsTableCard } from "../components/Assets/AssetsTableCard";
+import CardDash from "../components/Card";
 import { Box, SimpleGrid } from "@chakra-ui/react";
 import { FaBan, FaBox, FaCheckCircle, FaTools } from "react-icons/fa";
 
@@ -27,7 +27,7 @@ export default function Dashboard() {
         />
         <CardDash label="Inativos" value={1} icon={FaBan} iconColor="red.600" />
       </SimpleGrid> 
-      <AssetsTableCard />
+      <AssetsTableCard /> 
     </Box>
   );
 }

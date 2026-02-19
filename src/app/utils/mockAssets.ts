@@ -1,4 +1,4 @@
-import type { AssetRow } from "@/types/asset";
+import type { AssetRow } from "@/app/types/asset";
 
 export const mockAssets: AssetRow[] = [
   {

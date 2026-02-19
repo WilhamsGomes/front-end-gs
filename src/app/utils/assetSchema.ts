@@ -8,9 +8,7 @@ export const assetSchema = z.object({
     .string()
     .min(1, "Informe a data de aquisição")
     .regex(/^\d{2}\/\d{2}\/\d{4}$/, "Use o formato DD/MM/AAAA"),
-  status: z.enum(["ATIVO", "MANUTENCAO", "INATIVO"], {
-    message: "Selecione um status",
-  }),
+  status: z.string(),
 });
 
 export type AssetFormValues = z.infer<typeof assetSchema>;

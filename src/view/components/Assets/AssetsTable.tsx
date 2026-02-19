@@ -1,4 +1,5 @@
-import { getStatusUI, type AssetStatus } from "@/hooks/useStatusAssets";
+import { getStatusUI } from "@/app/hooks/useStatusAssets";
+import type { AssetsResponse } from "@/app/services/assets/assets";
 import {
   Badge,
   HStack,
@@ -8,26 +9,17 @@ import {
 } from "@chakra-ui/react";
 import { FiEdit2, FiTrash2 } from "react-icons/fi";
 
-export type AssetRow = {
-  id: string;
-  name: string;
-  category: string;
-  serialNumber: string;
-  acquisitionDate: string;
-  status: AssetStatus;
-};
-
 type AssetsTableProps = {
-  rows: AssetRow[];
-  onEdit?: (id: string) => void;
-  onDelete?: (id: string) => void;
+  rows: AssetsResponse[];
+  onEdit?: () => void;
+  onDelete?: () => void;
 };
 
 export function AssetsTable({ rows, onEdit, onDelete }: AssetsTableProps) {
-  return ( 
+  return (
     <TableScrollArea borderRadius="12px">
       <Table.Root variant="line" size="md">
-        <Table.Header > 
+        <Table.Header>
           <Table.Row bg="white">
             <Table.ColumnHeader color="blackAlpha.600">Nome</Table.ColumnHeader>
             <Table.ColumnHeader color="blackAlpha.600">
@@ -49,7 +41,7 @@ export function AssetsTable({ rows, onEdit, onDelete }: AssetsTableProps) {
         </Table.Header>
 
         <Table.Body>
-          {rows.map((a) => {
+          {rows?.map((a) => {
             const ui = getStatusUI(a.status);
             return (
               <Table.Row key={a.id} bg="white">
@@ -62,7 +54,7 @@ export function AssetsTable({ rows, onEdit, onDelete }: AssetsTableProps) {
                 <Table.Cell color="blackAlpha.700">{a.serialNumber}</Table.Cell>
 
                 <Table.Cell color="blackAlpha.900">
-                  {a.acquisitionDate}
+                  {a.acquisitionDate.toString()}
                 </Table.Cell>
 
                 <Table.Cell>
@@ -84,7 +76,7 @@ export function AssetsTable({ rows, onEdit, onDelete }: AssetsTableProps) {
                       aria-label="Editar"
                       variant="ghost"
                       borderRadius="10px"
-                      onClick={() => onEdit?.(a.id)}
+                      onClick={() => onEdit}
                     >
                       <FiEdit2 />
                     </IconButton>
@@ -94,7 +86,7 @@ export function AssetsTable({ rows, onEdit, onDelete }: AssetsTableProps) {
                       variant="ghost"
                       color="red.500"
                       borderRadius="10px"
-                      onClick={() => onDelete?.(a.id)}
+                      onClick={() => onDelete}
                     >
                       <FiTrash2 />
                     </IconButton>

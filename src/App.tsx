@@ -1,8 +1,8 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import Dashboard from "../pages/Dashboard";
-import Assets from "../pages/Assets";
-import Settings from "../pages/Settings";
-import { AppLayout } from "@/layout/AppLayout";
+import Dashboard from "./view/pages/Dashboard";
+import Assets from "./view/pages/Assets";
+import Settings from "./view/pages/Settings";
+import { AppLayout } from "./view/layout/AppLayout";
 
 export default function App() {
   return (

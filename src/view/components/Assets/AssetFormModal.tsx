@@ -11,8 +11,8 @@ import { useEffect, useMemo } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
-import { assetSchema, type AssetFormValues } from "@/utils/assetSchema";
-import type { AssetRow } from "@/types/asset";
+import { assetSchema, type AssetFormValues } from "@/app/utils/assetSchema";
+import type { AssetRow } from "@/app/types/asset";
 
 type Mode = "create" | "edit";
 

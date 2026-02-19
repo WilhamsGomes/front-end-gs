@@ -65,7 +65,7 @@ export default function Sidebar() {
         <Separator borderColor="whiteAlpha.200" />
 
         <VStack align="stretch" px="3" py="3">
-          {itemsNav.map((item) => (
+          {itemsNav.map((item, index) => (
             <Box
               display={"flex"}
               alignItems={"center"}
@@ -75,6 +75,7 @@ export default function Sidebar() {
               h="44px"
               p={4}
               borderRadius="12px"
+              key={index}
             >
               <Icon as={item.icon} boxSize={18} color="whiteAlpha.800" />
               <Text
